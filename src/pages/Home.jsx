@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import SEO from '../components/SEO';
 import { Link } from 'react-router-dom';
 import {
@@ -8,8 +8,10 @@ import {
     FaLeaf,
     FaLinkedinIn,
     FaEnvelope,
+    FaPause,
     FaPlay,
     FaRobot,
+    FaRedo,
     FaSeedling,
     FaStethoscope,
     FaUsers,
@@ -17,6 +19,287 @@ import {
 } from 'react-icons/fa';
 import { imageAssets } from '../lib/siteAssets';
 import './Home.css';
+
+const heroVideoImages = [
+    '/home-hero-photo-960.jpg',
+    '/landing-section-presentation-640.jpg',
+    '/landing-section-team-640.jpg'
+];
+
+const HERO_VIDEO_DURATION = 10000;
+
+const drawCoverImage = (context, image, canvasWidth, canvasHeight, progress) => {
+    const scale = Math.max(canvasWidth / image.width, canvasHeight / image.height) * (1.04 + progress * 0.05);
+    const width = image.width * scale;
+    const height = image.height * scale;
+    const x = (canvasWidth - width) / 2 + Math.sin(progress * Math.PI * 2) * 22;
+    const y = (canvasHeight - height) / 2 + Math.cos(progress * Math.PI * 2) * 14;
+
+    context.drawImage(image, x, y, width, height);
+};
+
+const drawHeroVideoFrame = (context, images, timestamp, startTime) => {
+    const { width, height } = context.canvas;
+    const elapsed = (timestamp - startTime) % HERO_VIDEO_DURATION;
+    const progress = elapsed / HERO_VIDEO_DURATION;
+    const slideProgress = (progress * images.length) % 1;
+    const imageIndex = Math.floor(progress * images.length) % images.length;
+    const nextImageIndex = (imageIndex + 1) % images.length;
+    const fade = Math.max(0, Math.min(1, (slideProgress - 0.78) / 0.22));
+
+    context.clearRect(0, 0, width, height);
+    context.save();
+    context.globalAlpha = 1;
+    drawCoverImage(context, images[imageIndex], width, height, progress);
+    context.globalAlpha = fade;
+    drawCoverImage(context, images[nextImageIndex], width, height, progress);
+    context.restore();
+
+    const overlay = context.createLinearGradient(0, 0, width, height);
+    overlay.addColorStop(0, 'rgba(36, 29, 99, 0.58)');
+    overlay.addColorStop(0.55, 'rgba(18, 14, 50, 0.24)');
+    overlay.addColorStop(1, 'rgba(200, 168, 75, 0.32)');
+    context.fillStyle = overlay;
+    context.fillRect(0, 0, width, height);
+
+    context.strokeStyle = 'rgba(249, 245, 231, 0.12)';
+    context.lineWidth = 1;
+    for (let x = -80 + progress * 80; x < width; x += 80) {
+        context.beginPath();
+        context.moveTo(x, 0);
+        context.lineTo(x, height);
+        context.stroke();
+    }
+    for (let y = -80 + progress * 80; y < height; y += 80) {
+        context.beginPath();
+        context.moveTo(0, y);
+        context.lineTo(width, y);
+        context.stroke();
+    }
+
+    const panelX = 72;
+    const panelY = height - 236;
+    context.fillStyle = 'rgba(19, 14, 51, 0.62)';
+    context.beginPath();
+    context.roundRect(panelX, panelY, 462, 150, 24);
+    context.fill();
+    context.strokeStyle = 'rgba(249, 245, 231, 0.22)';
+    context.stroke();
+
+    context.fillStyle = '#f2dd99';
+    context.font = '700 24px Inter, Arial, sans-serif';
+    context.fillText('Managed digital delivery', panelX + 32, panelY + 48);
+    context.fillStyle = '#f9f5e7';
+    context.font = '800 46px Inter, Arial, sans-serif';
+    context.fillText('10 sec sprint loop', panelX + 32, panelY + 103);
+
+    const pulse = 0.5 + Math.sin(progress * Math.PI * 2) * 0.5;
+    context.fillStyle = `rgba(200, 168, 75, ${0.72 + pulse * 0.18})`;
+    context.beginPath();
+    context.arc(width - 116, 102, 18 + pulse * 6, 0, Math.PI * 2);
+    context.fill();
+};
+
+const HomeHeroVideo = () => {
+    const videoRef = useRef(null);
+    const canvasRef = useRef(null);
+    const imagesRef = useRef([]);
+    const streamRef = useRef(null);
+    const animationFrameRef = useRef(null);
+    const playbackStartTimeRef = useRef(0);
+    const pausedAtRef = useRef(0);
+    const lastProgressUpdateRef = useRef(0);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+
+    useEffect(() => {
+        const canvas = canvasRef.current;
+
+        if (!canvas) {
+            return undefined;
+        }
+
+        const context = canvas.getContext('2d');
+        let isCancelled = false;
+
+        const loadImages = heroVideoImages.map((src) => new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = () => resolve(image);
+            image.onerror = reject;
+            image.src = src;
+        }));
+
+        Promise.all(loadImages)
+            .then((images) => {
+                if (isCancelled) {
+                    return;
+                }
+
+                imagesRef.current = images;
+                drawHeroVideoFrame(context, images, 0, 0);
+            })
+            .catch(() => {
+                imagesRef.current = [];
+            });
+
+        return () => {
+            isCancelled = true;
+            cancelAnimationFrame(animationFrameRef.current);
+            if (streamRef.current) {
+                streamRef.current.getTracks().forEach((track) => track.stop());
+            }
+        };
+    }, []);
+
+    const drawStillFrame = (time) => {
+        const canvas = canvasRef.current;
+        const context = canvas?.getContext('2d');
+
+        if (!context || imagesRef.current.length === 0) {
+            return;
+        }
+
+        drawHeroVideoFrame(context, imagesRef.current, time, 0);
+        setCurrentTime(time);
+    };
+
+    const ensureVideoStream = () => {
+        const video = videoRef.current;
+        const canvas = canvasRef.current;
+
+        if (!video || !canvas || !canvas.captureStream) {
+            return false;
+        }
+
+        if (!streamRef.current) {
+            streamRef.current = canvas.captureStream(30);
+            video.srcObject = streamRef.current;
+        }
+
+        return true;
+    };
+
+    const playHeroVideo = () => {
+        const video = videoRef.current;
+        const canvas = canvasRef.current;
+        const context = canvas?.getContext('2d');
+
+        if (!video || !canvas || !context || imagesRef.current.length === 0 || !ensureVideoStream()) {
+            return;
+        }
+
+        cancelAnimationFrame(animationFrameRef.current);
+
+        playbackStartTimeRef.current = performance.now() - pausedAtRef.current;
+        const draw = (timestamp) => {
+            const elapsed = (timestamp - playbackStartTimeRef.current) % HERO_VIDEO_DURATION;
+
+            drawHeroVideoFrame(context, imagesRef.current, timestamp, playbackStartTimeRef.current);
+            pausedAtRef.current = elapsed;
+
+            if (timestamp - lastProgressUpdateRef.current > 90) {
+                setCurrentTime(elapsed);
+                lastProgressUpdateRef.current = timestamp;
+            }
+
+            animationFrameRef.current = requestAnimationFrame(draw);
+        };
+
+        setIsPlaying(true);
+        animationFrameRef.current = requestAnimationFrame(draw);
+        video.play().catch(() => {
+            setIsPlaying(false);
+            cancelAnimationFrame(animationFrameRef.current);
+        });
+    };
+
+    const pauseHeroVideo = () => {
+        const video = videoRef.current;
+
+        cancelAnimationFrame(animationFrameRef.current);
+        video?.pause();
+        setIsPlaying(false);
+        setCurrentTime(pausedAtRef.current);
+    };
+
+    const restartHeroVideo = () => {
+        pausedAtRef.current = 0;
+        drawStillFrame(0);
+
+        if (isPlaying) {
+            playHeroVideo();
+        }
+    };
+
+    const scrubHeroVideo = (event) => {
+        const nextTime = Number(event.target.value);
+
+        pausedAtRef.current = nextTime;
+        drawStillFrame(nextTime);
+
+        if (isPlaying) {
+            playHeroVideo();
+        }
+    };
+
+    const formatTime = (time) => {
+        const seconds = Math.floor(time / 1000);
+
+        return `0:${seconds.toString().padStart(2, '0')}`;
+    };
+
+    return (
+        <>
+            <canvas
+                ref={canvasRef}
+                className="home-hero-video-canvas"
+                width="1280"
+                height="720"
+                aria-hidden="true"
+            />
+            <video
+                ref={videoRef}
+                className="home-hero-video"
+                aria-label="10-second KYNOVA delivery preview video"
+                muted
+                playsInline
+                loop
+                poster="/home-hero-photo-960.jpg"
+            />
+            <div className="home-video-controls" aria-label="Hero video controls">
+                <button
+                    type="button"
+                    className="home-video-control-button home-video-primary-control"
+                    onClick={isPlaying ? pauseHeroVideo : playHeroVideo}
+                    aria-label={isPlaying ? 'Pause KYNOVA delivery preview video' : 'Play KYNOVA delivery preview video'}
+                >
+                    {isPlaying ? <FaPause /> : <FaPlay />}
+                </button>
+                <button
+                    type="button"
+                    className="home-video-control-button"
+                    onClick={restartHeroVideo}
+                    aria-label="Restart KYNOVA delivery preview video"
+                >
+                    <FaRedo />
+                </button>
+                <input
+                    className="home-video-progress"
+                    type="range"
+                    min="0"
+                    max={HERO_VIDEO_DURATION}
+                    step="100"
+                    value={Math.round(currentTime)}
+                    onChange={scrubHeroVideo}
+                    aria-label="Video progress"
+                />
+                <span className="home-video-time">
+                    {formatTime(currentTime)} / 0:10
+                </span>
+            </div>
+        </>
+    );
+};
 
 const clientLogos = [
     'Enterprise Teams',
@@ -248,32 +531,8 @@ const Home = () => {
                         </div>
 
                         <div className="home-hero-visual" data-aos="fade-left">
-                            <div className="home-hero-mesh"></div>
-                            <div className="home-hero-card home-stat-card">
-                                <span>Execution-first</span>
-                                <strong>Strategy, build, automation, and insight in one delivery model.</strong>
-                            </div>
-                            <div className="home-hero-card home-play-card">
-                                <div className="home-play-button"><FaPlay /></div>
-                                <p>See how managed delivery helps teams ship faster without building everything in-house.</p>
-                            </div>
-                            <div className="home-hero-card home-mini-grid">
-                                <div>
-                                    <strong>Faster</strong>
-                                    <span>clearer delivery cycles</span>
-                                </div>
-                                <div>
-                                    <strong>Smarter</strong>
-                                    <span>systems and workflows</span>
-                                </div>
-                                <div>
-                                    <strong>Safer</strong>
-                                    <span>modern operational foundations</span>
-                                </div>
-                                <div>
-                                    <strong>Stronger</strong>
-                                    <span>decision support and visibility</span>
-                                </div>
+                            <div className="home-video-placeholder">
+                                <HomeHeroVideo />
                             </div>
                         </div>
                     </div>
