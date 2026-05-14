@@ -404,11 +404,18 @@
     box-shadow: 0 14px 32px rgba(8, 6, 26, 0.2);
 }
 
+.contact-bottom-note a svg {
+    transition: transform 0.22s ease;
+}
+
 .contact-bottom-note a:hover {
     background: rgba(242, 221, 153, 0.16);
     border-color: rgba(242, 221, 153, 0.72);
     color: #f9f5e7;
-    transform: translateY(-1px);
+}
+
+.contact-bottom-note a:hover svg {
+    transform: translateX(6px);
 }
 
 @media (max-width: 1024px) {
