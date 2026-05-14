@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
+import { imageAssets } from '../lib/siteAssets';
 import './Contact.css';
 
 const Contact = () => {
@@ -94,6 +95,43 @@ const Contact = () => {
             />
 
             <Breadcrumb items={breadcrumbItems} />
+
+            <section className="contact-hero">
+                <div className="container">
+                    <div className="contact-hero-grid">
+                        <div className="contact-hero-copy">
+                            <span className="contact-kicker">Contact us</span>
+                            <h1>Start the conversation that moves your next digital priority forward.</h1>
+                            <p className="contact-hero-text">
+                                Whether you are exploring a new product, improving internal systems, modernising cloud infrastructure,
+                                or clarifying a transformation roadmap, we would be glad to hear what you are working through.
+                            </p>
+                            <p className="contact-hero-text">
+                                Share the challenge, the opportunity, or the timeline you are navigating and we will help shape the right next step.
+                            </p>
+                        </div>
+
+                        <div className="contact-hero-media">
+                            <div className="contact-hero-card">
+                                <img
+                                    src={imageAssets.meeting.src}
+                                    srcSet={imageAssets.meeting.srcSet}
+                                    sizes={imageAssets.meeting.sizes}
+                                    width={imageAssets.meeting.width}
+                                    height={imageAssets.meeting.height}
+                                    alt="KYNOVA team discussing a project"
+                                    loading="eager"
+                                    decoding="async"
+                                />
+                            </div>
+                            <div className="contact-floating-note">
+                                <span>Response focus</span>
+                                <strong>Practical conversations around product, cloud, workflow, and delivery priorities.</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <section className="section contact-main-section">
                 <div className="container">
