@@ -1,7 +1,7 @@
 .footer {
     position: relative;
     margin-top: 0;
-    padding: clamp(1rem, 2vw, 1.75rem) 0 0;
+    padding: 0;
     background:
         radial-gradient(circle at top left, rgba(200, 168, 75, 0.18), transparent 28%),
         radial-gradient(circle at top right, rgba(92, 84, 192, 0.28), transparent 34%),
@@ -245,7 +245,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 0.85rem 0 0;
+        padding: 0;
     }
 
     .footer-shell {
