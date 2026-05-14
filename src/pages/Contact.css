@@ -126,6 +126,10 @@
     padding-top: 3rem;
 }
 
+.contact-channels-section {
+    padding-bottom: 1.25rem;
+}
+
 .contact-form-panel {
     padding: 2rem;
 }
@@ -336,6 +340,10 @@
 }
 
 @media (max-width: 768px) {
+    .contact-channels-section {
+        padding-bottom: 0.75rem;
+    }
+
     .contact-main-grid,
     .contact-channels-grid,
     .form-row {
