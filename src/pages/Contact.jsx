@@ -2,7 +2,6 @@ import { useState, useRef } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
-import { imageAssets } from '../lib/siteAssets';
 import './Contact.css';
 
 const Contact = () => {
@@ -95,77 +94,6 @@ const Contact = () => {
             />
 
             <Breadcrumb items={breadcrumbItems} />
-
-            <section className="contact-hero">
-                <div className="container">
-                    <div className="contact-hero-grid">
-                        <div className="contact-hero-copy">
-                            <span className="contact-kicker">Contact us</span>
-                            <h1>Start the conversation that moves your next digital priority forward.</h1>
-                            <p className="contact-hero-text">
-                                Whether you are exploring a new product, improving internal systems, modernising cloud infrastructure,
-                                or clarifying a transformation roadmap, we would be glad to hear what you are working through.
-                            </p>
-                            <p className="contact-hero-text">
-                                Share the challenge, the opportunity, or the timeline you are navigating and we will help shape the right next step.
-                            </p>
-                        </div>
-
-                        <div className="contact-hero-media">
-                            <div className="contact-hero-card">
-                                <img
-                                    src={imageAssets.meeting.src}
-                                    srcSet={imageAssets.meeting.srcSet}
-                                    sizes={imageAssets.meeting.sizes}
-                                    width={imageAssets.meeting.width}
-                                    height={imageAssets.meeting.height}
-                                    alt="KYNOVA team discussing a project"
-                                    loading="eager"
-                                    decoding="async"
-                                />
-                            </div>
-                            <div className="contact-floating-note">
-                                <span>Response focus</span>
-                                <strong>Practical conversations around product, cloud, workflow, and delivery priorities.</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="section contact-channels-section">
-                <div className="container">
-                    <div className="section-header text-center">
-                        <span className="contact-kicker">Ways to reach us</span>
-                        <h2 className="section-title">Choose the contact route that fits best.</h2>
-                    </div>
-
-                    <div className="contact-channels-grid">
-                        <article className="contact-channel-card">
-                            <div className="contact-channel-icon"><FaEnvelope /></div>
-                            <h3>Email us</h3>
-                            <p>Best for project questions, partnership requests, and general enquiries that need a detailed response.</p>
-                            <a href="mailto:info@kynova.com">info@kynova.com</a>
-                        </article>
-
-                        <article className="contact-channel-card">
-                            <div className="contact-channel-icon"><FaPhoneAlt /></div>
-                            <h3>Call us</h3>
-                            <p>Reach out directly if you want to discuss an active project, a delivery need, or an urgent enquiry.</p>
-                            <a href="tel:+233201876093">+233 20 187 6093</a>
-                            <a href="tel:+2348034579536">+234 803 457 9536</a>
-                            <a href="https://wa.me/233201876093" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
-                        </article>
-
-                        <article className="contact-channel-card">
-                            <div className="contact-channel-icon"><FaMapMarkerAlt /></div>
-                            <h3>Visit us</h3>
-                            <p>Ministry of Foreign Affairs, No. 1 Revenue Close, Off Liberation Road, Accra, Ghana.</p>
-                            <span className="contact-channel-note">Office meetings by prior arrangement.</span>
-                        </article>
-                    </div>
-                </div>
-            </section>
 
             <section className="section contact-main-section">
                 <div className="container">
@@ -282,27 +210,39 @@ const Contact = () => {
                                 </button>
                             </form>
                         </div>
+                    </div>
+                </div>
+            </section>
 
-                        <div className="contact-info-panel">
-                            <span className="contact-kicker">Office details</span>
-                            <h2>Find our Accra office.</h2>
-                            <p>
-                                Our office is located at the Ministry of Foreign Affairs, No. 1 Revenue Close,
-                                Off Liberation Road, Accra, Ghana. Office meetings are arranged in advance so
-                                the right team members can be available for your visit.
-                            </p>
+            <section className="section contact-channels-section">
+                <div className="container">
+                    <div className="section-header text-center">
+                        <span className="contact-kicker">Ways to reach us</span>
+                        <h2 className="section-title">Choose the contact route that fits best.</h2>
+                    </div>
 
-                            <div className="contact-info-list">
-                                <div>
-                                    <strong>Address</strong>
-                                    <span>Ministry of Foreign Affairs, No. 1 Revenue Close, Off Liberation Road, Accra, Ghana</span>
-                                </div>
-                                <div>
-                                    <strong>Visits</strong>
-                                    <span>Office meetings by prior arrangement.</span>
-                                </div>
-                            </div>
+                    <div className="contact-channels-grid">
+                        <article className="contact-channel-card">
+                            <div className="contact-channel-icon"><FaEnvelope /></div>
+                            <h3>Email us</h3>
+                            <p>Best for project questions, partnership requests, and general enquiries that need a detailed response.</p>
+                            <a href="mailto:info@kynova.com">info@kynova.com</a>
+                        </article>
 
+                        <article className="contact-channel-card">
+                            <div className="contact-channel-icon"><FaPhoneAlt /></div>
+                            <h3>Call us</h3>
+                            <p>Reach out directly if you want to discuss an active project, a delivery need, or an urgent enquiry.</p>
+                            <a href="tel:+233201876093">+233 20 187 6093</a>
+                            <a href="tel:+2348034579536">+234 803 457 9536</a>
+                            <a href="https://wa.me/233201876093" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+                        </article>
+
+                        <article className="contact-channel-card contact-location-card">
+                            <div className="contact-channel-icon"><FaMapMarkerAlt /></div>
+                            <h3>Visit us</h3>
+                            <p>Ministry of Foreign Affairs, No. 1 Revenue Close, Off Liberation Road, Accra, Ghana.</p>
+                            <span className="contact-channel-note">Office meetings by prior arrangement.</span>
                             <div className="contact-map-shell">
                                 <iframe
                                     title="Office Location"
@@ -315,10 +255,10 @@ const Contact = () => {
                                     referrerPolicy="no-referrer-when-downgrade"
                                 ></iframe>
                             </div>
-                        </div>
+                        </article>
                     </div>
 
-                    <div className="contact-bottom-note">
+                    <div className="contact-bottom-note contact-next-card">
                         <span className="contact-kicker">What happens next</span>
                         <h3>We review enquiries with delivery context in mind.</h3>
                         <p>

@@ -8,17 +8,6 @@ const Footer = () => {
         <footer className="footer">
             <div className="container">
                 <div className="footer-shell">
-                    <div className="footer-topbar">
-                        <div>
-                            <span className="footer-kicker">Built for modern delivery</span>
-                            <h2>Ready to discuss your next digital priority?</h2>
-                        </div>
-                        <div className="footer-actions">
-                            <Link className="footer-cta" to="/contact">Start a conversation</Link>
-                            <a className="footer-email-link" href="mailto:info@kynova.com">info@kynova.com</a>
-                        </div>
-                    </div>
-
                     <div className="footer-content">
                         <div className="footer-column footer-brand-column">
                             <Link className="footer-brand-logo" to="/" aria-label="KYNOVA home">
