@@ -82,8 +82,7 @@
 
 .contact-hero-card,
 .contact-channel-card,
-.contact-form-panel,
-.contact-bottom-note {
+.contact-form-panel {
     border: 1px solid rgba(249, 245, 231, 0.1);
     border-radius: 30px;
     background: rgba(249, 245, 231, 0.05);
@@ -366,10 +365,7 @@
     justify-content: space-between;
     gap: 2.25rem;
     margin-top: 2rem;
-    padding: 1.8rem 2.25rem;
-    background:
-        radial-gradient(circle at top right, rgba(200, 168, 75, 0.16), transparent 32%),
-        linear-gradient(180deg, rgba(60, 52, 137, 0.24), rgba(18, 14, 52, 0.86));
+    padding: 0.25rem 0 0;
 }
 
 .contact-bottom-note .contact-kicker {
@@ -467,8 +463,7 @@
 
     .contact-form-panel,
     .contact-hero-card,
-    .contact-channel-card,
-    .contact-bottom-note {
+    .contact-channel-card {
         padding: 1.4rem;
     }
 }
