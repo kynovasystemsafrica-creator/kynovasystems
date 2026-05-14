@@ -100,7 +100,6 @@ const Contact = () => {
                 <div className="container">
                     <div className="contact-hero-grid">
                         <div className="contact-hero-copy">
-                            <span className="contact-kicker">Contact us</span>
                             <h1>Start the conversation that moves your next digital priority forward.</h1>
                             <p className="contact-hero-text">
                                 Whether you are exploring a new product, improving internal systems, modernising cloud infrastructure,
