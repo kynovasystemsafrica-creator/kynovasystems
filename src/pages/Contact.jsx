@@ -1,6 +1,5 @@
 import { useState, useRef } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
-import emailjs from '@emailjs/browser';
 import SEO from '../components/SEO';
 import Breadcrumb from '../components/Breadcrumb';
 import { imageAssets } from '../lib/siteAssets';
@@ -155,6 +154,7 @@ const Contact = () => {
                             <p>Reach out directly if you want to discuss an active project, a delivery need, or an urgent enquiry.</p>
                             <a href="tel:+233201876093">+233 20 187 6093</a>
                             <a href="tel:+2348034579536">+234 803 457 9536</a>
+                            <a href="https://wa.me/233201876093" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
                         </article>
 
                         <article className="contact-channel-card">
@@ -174,7 +174,7 @@ const Contact = () => {
                             <span className="contact-kicker">Send a message</span>
                             <h2>Tell us what you are trying to solve.</h2>
                             <p className="contact-form-intro">
-                                Fill out the form below and our team will get back to you shortly.
+                                Fill out the form below and our team will get back to you shortly, usually within 1-2 business days.
                             </p>
                             <p className="contact-required-note">Required fields are marked.</p>
 
@@ -188,7 +188,7 @@ const Contact = () => {
                             <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label htmlFor="name">Full name</label>
+                                        <label htmlFor="name">Full name <span aria-hidden="true">*</span></label>
                                         <input
                                             type="text"
                                             id="name"
@@ -200,7 +200,7 @@ const Contact = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email">Email address</label>
+                                        <label htmlFor="email">Email address <span aria-hidden="true">*</span></label>
                                         <input
                                             type="email"
                                             id="email"
@@ -247,7 +247,7 @@ const Contact = () => {
 
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label htmlFor="subject">Subject</label>
+                                        <label htmlFor="subject">Subject <span aria-hidden="true">*</span></label>
                                         <input
                                             type="text"
                                             id="subject"
@@ -261,7 +261,7 @@ const Contact = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="message">Message</label>
+                                    <label htmlFor="message">Message <span aria-hidden="true">*</span></label>
                                     <textarea
                                         id="message"
                                         name="message"

@@ -275,6 +275,10 @@
     text-transform: uppercase;
 }
 
+.form-group label span {
+    color: #f2dd99;
+}
+
 .form-group input,
 .form-group textarea,
 .form-group select {
