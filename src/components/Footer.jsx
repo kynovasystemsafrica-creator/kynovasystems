@@ -6,8 +6,8 @@ const Footer = () => {
 
     return (
         <footer className="footer">
-            <div className="container">
-                <div className="footer-shell">
+            <div className="footer-shell">
+                <div className="footer-inner">
                     <div className="footer-content">
                         <div className="footer-column footer-brand-column">
                             <Link className="footer-brand-logo" to="/" aria-label="KYNOVA home">

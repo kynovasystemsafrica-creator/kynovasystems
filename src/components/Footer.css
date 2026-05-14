@@ -1,21 +1,29 @@
 .footer {
     position: relative;
     margin-top: clamp(1rem, 2vw, 1.75rem);
-    padding: 0.9rem 0 1.1rem;
+    padding: 0.9rem 0 0;
     color: rgba(249, 245, 231, 0.78);
 }
 
 .footer-shell {
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(249, 245, 231, 0.1);
-    border-radius: 22px;
-    padding: clamp(0.9rem, 1.8vw, 1.25rem);
+    width: 100%;
+    border-top: 1px solid rgba(249, 245, 231, 0.1);
+    padding: clamp(0.9rem, 1.8vw, 1.25rem) 0;
     background:
         radial-gradient(circle at top left, rgba(200, 168, 75, 0.18), transparent 28%),
         radial-gradient(circle at top right, rgba(92, 84, 192, 0.28), transparent 34%),
         linear-gradient(180deg, rgba(28, 22, 78, 0.96) 0%, rgba(18, 14, 52, 0.98) 48%, rgba(11, 9, 31, 1) 100%);
     box-shadow: 0 28px 70px rgba(7, 5, 22, 0.45);
+}
+
+.footer-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 .footer-shell::before {
@@ -233,12 +241,11 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 0.75rem 0 1rem;
+        padding: 0.75rem 0 0;
     }
 
     .footer-shell {
-        border-radius: 18px;
-        padding: 0.85rem;
+        padding: 0.85rem 0;
     }
 
     .footer-topbar,
