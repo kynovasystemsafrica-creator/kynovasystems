@@ -241,10 +241,6 @@
     padding-top: 1rem;
 }
 
-.contact-channels-section {
-    padding-bottom: 0;
-}
-
 .contact-form-panel {
     padding: 2rem;
 }
@@ -466,10 +462,6 @@
 @media (max-width: 768px) {
     .contact-hero {
         padding: 1rem 0 3rem;
-    }
-
-    .contact-channels-section {
-        padding-bottom: 0;
     }
 
     .contact-hero-grid,
