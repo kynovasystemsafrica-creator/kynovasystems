@@ -1,7 +1,11 @@
 .footer {
     position: relative;
-    margin-top: clamp(1rem, 2vw, 1.75rem);
-    padding: 0.9rem 0 0;
+    margin-top: 0;
+    padding: clamp(1rem, 2vw, 1.75rem) 0 0;
+    background:
+        radial-gradient(circle at top left, rgba(200, 168, 75, 0.18), transparent 28%),
+        radial-gradient(circle at top right, rgba(92, 84, 192, 0.28), transparent 34%),
+        linear-gradient(180deg, rgba(28, 22, 78, 0.96) 0%, rgba(18, 14, 52, 0.98) 48%, rgba(11, 9, 31, 1) 100%);
     color: rgba(249, 245, 231, 0.78);
 }
 
@@ -241,7 +245,7 @@
 
 @media (max-width: 768px) {
     .footer {
-        padding: 0.75rem 0 0;
+        padding: 0.85rem 0 0;
     }
 
     .footer-shell {

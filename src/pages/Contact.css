@@ -216,7 +216,7 @@
 }
 
 .contact-channels-section {
-    padding-bottom: 1.25rem;
+    padding-bottom: 0;
 }
 
 .contact-form-panel {
@@ -434,7 +434,7 @@
     }
 
     .contact-channels-section {
-        padding-bottom: 0.75rem;
+        padding-bottom: 0;
     }
 
     .contact-hero-grid,
