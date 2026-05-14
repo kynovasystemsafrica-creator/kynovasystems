@@ -549,5 +549,12 @@
 
     .contact-submit {
         width: min(100%, 220px);
+        background: #C8A84B;
+        color: #201948;
+    }
+
+    .contact-submit:hover {
+        background: #d8bb68;
+        color: #201948;
     }
 }
