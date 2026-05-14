@@ -116,7 +116,6 @@ The generated production files are written to `dist/`.
 This repository also includes:
 
 - `vercel.json` for Vercel deployment
-- `netlify.toml` for Netlify deployment
 - `public/sitemap.xml` and `public/robots.txt` for search indexing support
 
 ## Notes
