@@ -4,7 +4,6 @@ import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import SEO from '../components/SEO';
 import { FaChess, FaSearch, FaMapSigns, FaCogs, FaHandshake, FaExchangeAlt } from 'react-icons/fa';
 import './ServicePage.css';
-import Breadcrumb from '../components/Breadcrumb';
 
 
 const Consulting = () => {
@@ -56,11 +55,6 @@ const Consulting = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Consulting', path: '/consulting' }
-    ];
-
     return (
         <div className="service-page">
             <SEO
@@ -68,9 +62,6 @@ const Consulting = () => {
                 description="Practical consulting services for digital strategy, roadmap planning, process improvement, and transformation decision-making."
                 keywords="digital consulting, IT consulting, digital strategy, roadmap, process optimization, KYNOVA"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <Hero
                 title="IT Consulting Services"
                 subtitle="Strategic guidance to navigate your digital transformation"

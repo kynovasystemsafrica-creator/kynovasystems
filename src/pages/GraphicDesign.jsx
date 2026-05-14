@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import Breadcrumb from '../components/Breadcrumb';
 import SEO from '../components/SEO';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import { FaPencilRuler, FaPalette, FaPrint, FaInstagram, FaBullhorn, FaFilm } from 'react-icons/fa';
@@ -55,11 +54,6 @@ const GraphicDesign = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Graphic Design', path: '/graphic-design' }
-    ];
-
     return (
         <div className="service-page">
             <SEO
@@ -67,9 +61,6 @@ const GraphicDesign = () => {
                 description="Professional graphic design services in Ghana. Brand identity, UI/UX design, print materials, social media graphics, and motion design."
                 keywords="graphic design, brand identity, UI/UX design, print design, social media graphics, Ghana"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <Hero
                 title="Graphic Design"
                 subtitle="Stunning visuals that capture your brand essence and engage your audience"

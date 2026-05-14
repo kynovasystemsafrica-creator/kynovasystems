@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { FaHandshake, FaChartLine, FaGlobeAfrica, FaArrowRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
-import Breadcrumb from '../components/Breadcrumb';
 import { imageAssets } from '../lib/siteAssets';
 import './About.css';
 
@@ -48,11 +47,6 @@ const About = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'About', path: '/about' }
-    ];
-
     return (
         <div className="about-page about-kynova">
             <SEO
@@ -60,9 +54,6 @@ const About = () => {
                 description="Learn about KYNOVA's delivery approach, leadership team, values, and the practical digital transformation support we provide."
                 keywords="KYNOVA about, digital transformation, product engineering, cloud modernization, delivery team"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <section className="about-hero">
                 <div className="container">
                     <div className="about-hero-grid">

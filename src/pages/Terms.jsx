@@ -1,12 +1,7 @@
 import SEO from '../components/SEO';
-import Breadcrumb from '../components/Breadcrumb';
 import './LegalPage.css';
 
 const Terms = () => {
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Terms of Service', path: '/terms' }
-    ];
 
     return (
         <div className="legal-page">
@@ -15,9 +10,6 @@ const Terms = () => {
                 description="Read the terms that govern the use of the KYNOVA website."
                 keywords="terms of service, KYNOVA terms, website terms"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <section className="legal-hero">
                 <div className="container">
                     <div className="legal-shell">

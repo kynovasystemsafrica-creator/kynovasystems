@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import Hero from '../components/Hero';
-import Breadcrumb from '../components/Breadcrumb';
 import SEO from '../components/SEO';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import { FaMobileAlt, FaLaptopCode, FaWifi, FaGlobe, FaShoppingCart, FaServer } from 'react-icons/fa';
@@ -55,11 +54,6 @@ const MobileWebDev = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Mobile & Web Development', path: '/mobile-web-development' }
-    ];
-
     return (
         <div className="service-page">
             <SEO
@@ -67,9 +61,6 @@ const MobileWebDev = () => {
                 description="Professional mobile and web development services in Ghana. Build cutting-edge applications with React, Node.js, and modern technologies."
                 keywords="mobile development, web development, React, Node.js, Ghana"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <Hero
                 title="Mobile & Web Development"
                 subtitle="Build powerful applications that engage users and drive business growth"

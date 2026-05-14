@@ -1,12 +1,7 @@
 import SEO from '../components/SEO';
-import Breadcrumb from '../components/Breadcrumb';
 import './LegalPage.css';
 
 const Privacy = () => {
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Privacy Policy', path: '/privacy' }
-    ];
 
     return (
         <div className="legal-page">
@@ -15,9 +10,6 @@ const Privacy = () => {
                 description="Read KYNOVA's privacy policy and understand how we handle personal information submitted through this website."
                 keywords="privacy policy, KYNOVA privacy, data handling"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <section className="legal-hero">
                 <div className="container">
                     <div className="legal-shell">

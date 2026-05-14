@@ -238,7 +238,7 @@
 }
 
 .contact-main-section {
-    padding-top: 1rem;
+    padding-top: 3rem;
 }
 
 .contact-form-panel {
@@ -359,8 +359,20 @@
 }
 
 .contact-submit {
-    width: 100%;
+    width: min(100%, 220px);
+    justify-self: center;
     margin-top: 0.5rem;
+    min-height: 44px;
+    padding: 0.72rem 1.25rem;
+    font-size: 0.95rem;
+    background: #C8A84B;
+    color: #201948;
+}
+
+.contact-submit:hover {
+    background: #d8bb68;
+    color: #201948;
+    box-shadow: 0 8px 25px rgba(200, 168, 75, 0.3);
 }
 
 .contact-alert {

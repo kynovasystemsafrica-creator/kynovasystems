@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight } from 'react-icons/fa';
 import SEO from '../components/SEO';
-import Breadcrumb from '../components/Breadcrumb';
 import { imageAssets } from '../lib/siteAssets';
 import './Contact.css';
 
@@ -81,11 +80,6 @@ const Contact = () => {
         }
     };
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Contact', path: '/contact' }
-    ];
-
     return (
         <div className="contact-page contact-kynova">
             <SEO
@@ -93,9 +87,6 @@ const Contact = () => {
                 description="Get in touch with KYNOVA. We are here to help with digital delivery, cloud modernization, product engineering, and transformation work."
                 keywords="contact KYNOVA, digital transformation, web development inquiry, cloud consulting"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <section className="contact-hero">
                 <div className="container">
                     <div className="contact-hero-grid">
@@ -275,7 +266,7 @@ const Contact = () => {
                             <p>Reach out directly if you want to discuss an active project, a delivery need, or an urgent enquiry.</p>
                             <a href="tel:+233201876093">+233 20 187 6093</a>
                             <a href="tel:+2348034579536">+234 803 457 9536</a>
-                            <a href="https://wa.me/233201876093" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
+                            <a className="contact-email-cta" href="https://wa.me/233201876093" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
                         </article>
 
                         <article className="contact-channel-card contact-location-card">

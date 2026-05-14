@@ -4,7 +4,6 @@ import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import SEO from '../components/SEO';
 import { FaServer, FaRobot, FaProjectDiagram, FaDigitalTachograph, FaDatabase, FaCode } from 'react-icons/fa';
 import './ServicePage.css';
-import Breadcrumb from '../components/Breadcrumb';
 
 
 const Engineering = () => {
@@ -56,11 +55,6 @@ const Engineering = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Engineering & Digitization', path: '/engineering' }
-    ];
-
     return (
         <div className="service-page">
             <SEO
@@ -68,9 +62,6 @@ const Engineering = () => {
                 description="Engineering and digitization services for organisations modernizing systems, automating workflows, and improving operational visibility."
                 keywords="digitization, engineering services, process automation, enterprise integration, KYNOVA"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <Hero
                 title="Engineering & Digitization"
                 subtitle="Modernize your technology infrastructure for the digital age"

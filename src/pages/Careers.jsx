@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import Breadcrumb from '../components/Breadcrumb';
 import SEO from '../components/SEO';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import { FaLaptopCode, FaPaintBrush, FaCloud, FaServer, FaBullhorn, FaTasks, FaGlobeAfrica, FaUsers, FaChartLine, FaArrowRight } from 'react-icons/fa';
@@ -76,11 +75,6 @@ const Careers = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Careers', path: '/careers' }
-    ];
-
     return (
         <div className="careers-page careers-kynova">
             <SEO
@@ -88,9 +82,6 @@ const Careers = () => {
                 description="Explore careers at KYNOVA and join a team focused on product engineering, cloud modernization, design, and digital delivery."
                 keywords="KYNOVA careers, jobs, digital transformation jobs, engineering, design, cloud"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <section className="careers-hero">
                 <div className="container">
                     <div className="careers-hero-grid">

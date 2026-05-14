@@ -4,7 +4,6 @@ import InteractiveServiceCards from '../components/InteractiveServiceCards';
 import SEO from '../components/SEO';
 import { FaCloudUploadAlt, FaNetworkWired, FaServer, FaShieldAlt, FaInfinity, FaMoneyBillWave } from 'react-icons/fa';
 import './ServicePage.css';
-import Breadcrumb from '../components/Breadcrumb';
 
 
 const CloudComputing = () => {
@@ -56,11 +55,6 @@ const CloudComputing = () => {
         }
     ];
 
-    const breadcrumbItems = [
-        { label: 'Home', path: '/' },
-        { label: 'Cloud Computing', path: '/cloud-computing' }
-    ];
-
     return (
         <div className="service-page">
             <SEO
@@ -68,9 +62,6 @@ const CloudComputing = () => {
                 description="Cloud migration, infrastructure modernization, DevOps, and cloud optimization services for organisations building more resilient digital operations."
                 keywords="cloud computing, cloud migration, DevOps, infrastructure modernization, KYNOVA"
             />
-
-            <Breadcrumb items={breadcrumbItems} />
-
             <Hero
                 title="Cloud Computing Solutions"
                 subtitle="Harness the power of cloud technology for scalability and innovation"
