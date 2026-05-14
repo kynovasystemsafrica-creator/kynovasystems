@@ -162,48 +162,6 @@ const Contact = () => {
             <section className="section contact-main-section">
                 <div className="container">
                     <div className="contact-main-grid">
-                        <div className="contact-info-panel">
-                            <span className="contact-kicker">Office details</span>
-                            <h2>Let&apos;s talk through what you need and what success should look like.</h2>
-                            <p>
-                                We work best when conversations begin with the real business context: the friction,
-                                the opportunity, the timeline, and the outcome that matters most.
-                            </p>
-                            <p>
-                                If you already have a project brief, feel free to include it. If not, a few lines
-                                describing the challenge is enough for us to start.
-                            </p>
-
-                            <div className="contact-info-list">
-                                <div>
-                                    <strong>Email</strong>
-                                    <a href="mailto:info@kynova.com">info@kynova.com</a>
-                                </div>
-                                <div>
-                                    <strong>Phone</strong>
-                                    <a href="tel:+233201876093">+233 20 187 6093</a>
-                                    <a href="tel:+2348034579536">+234 803 457 9536</a>
-                                </div>
-                                <div>
-                                    <strong>Location</strong>
-                                    <span>Ministry of Foreign Affairs, No. 1 Revenue Close, Off Liberation Road, Accra, Ghana</span>
-                                </div>
-                            </div>
-
-                            <div className="contact-map-shell">
-                                <iframe
-                                    title="Office Location"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9975682851644!2d-0.17424068523755!3d5.573215995943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a7b0e8b0f55%3A0x2bce99e2e4c0e0a9!2sMinistry%20of%20Foreign%20Affairs%20%26%20Regional%20Integration!5e0!3m2!1sen!2sgh!4v1707868800000!5m2!1sen!2sgh"
-                                    width="100%"
-                                    height="220"
-                                    style={{ border: 0 }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
-                                ></iframe>
-                            </div>
-                        </div>
-
                         <div className="contact-form-panel">
                             <span className="contact-kicker">Send a message</span>
                             <h2>Tell us what you are trying to solve.</h2>
@@ -293,6 +251,40 @@ const Contact = () => {
                                     {formStatus.loading ? 'Sending...' : 'Send Message'}
                                 </button>
                             </form>
+                        </div>
+
+                        <div className="contact-info-panel">
+                            <span className="contact-kicker">Office details</span>
+                            <h2>Find our Accra office.</h2>
+                            <p>
+                                Our office is located at the Ministry of Foreign Affairs, No. 1 Revenue Close,
+                                Off Liberation Road, Accra, Ghana. Office meetings are arranged in advance so
+                                the right team members can be available for your visit.
+                            </p>
+
+                            <div className="contact-info-list">
+                                <div>
+                                    <strong>Address</strong>
+                                    <span>Ministry of Foreign Affairs, No. 1 Revenue Close, Off Liberation Road, Accra, Ghana</span>
+                                </div>
+                                <div>
+                                    <strong>Visits</strong>
+                                    <span>Office meetings by prior arrangement.</span>
+                                </div>
+                            </div>
+
+                            <div className="contact-map-shell">
+                                <iframe
+                                    title="Office Location"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9975682851644!2d-0.17424068523755!3d5.573215995943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9a7b0e8b0f55%3A0x2bce99e2e4c0e0a9!2sMinistry%20of%20Foreign%20Affairs%20%26%20Regional%20Integration!5e0!3m2!1sen!2sgh!4v1707868800000!5m2!1sen!2sgh"
+                                    width="100%"
+                                    height="220"
+                                    style={{ border: 0 }}
+                                    allowFullScreen=""
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                ></iframe>
+                            </div>
                         </div>
                     </div>
 
