@@ -210,6 +210,33 @@
     color: #f9f5e7;
 }
 
+.contact-channel-card a.contact-email-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    min-height: 40px;
+    margin-top: 0.85rem;
+    padding: 0.62rem 0.85rem;
+    border: 1px solid rgba(242, 221, 153, 0.42);
+    border-radius: 999px;
+    background: rgba(242, 221, 153, 0.08);
+    box-shadow: 0 14px 32px rgba(8, 6, 26, 0.2);
+}
+
+.contact-channel-card a.contact-email-cta svg {
+    transition: transform 0.22s ease;
+}
+
+.contact-channel-card a.contact-email-cta:hover {
+    background: rgba(242, 221, 153, 0.16);
+    border-color: rgba(242, 221, 153, 0.72);
+}
+
+.contact-channel-card a.contact-email-cta:hover svg {
+    transform: translateX(6px);
+}
+
 .contact-main-section {
     padding-top: 1rem;
 }
@@ -362,26 +389,30 @@
 .contact-bottom-note {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2.25rem;
-    margin-top: 2rem;
-    padding: 0.25rem 0 0;
+    justify-content: flex-end;
+    margin-top: 1.2rem;
+    padding: 0;
 }
 
 .contact-bottom-note .contact-kicker {
-    flex: 0 0 116px;
+    flex: 0 0 102px;
     margin: 0;
+    font-size: 0.68rem;
     overflow-wrap: normal;
 }
 
 .contact-bottom-note h3 {
-    flex: 0 1 390px;
-    margin-bottom: 0.7rem;
+    flex: 0 1 340px;
+    margin-bottom: 0.45rem;
+    font-size: 1.05rem;
+    line-height: 1.25;
 }
 
 .contact-bottom-note p {
-    flex: 1 1 420px;
+    flex: 1 1 360px;
     margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
 }
 
 .contact-bottom-note a {
@@ -389,12 +420,13 @@
     align-items: center;
     justify-content: center;
     gap: 0.55rem;
-    min-height: 46px;
-    padding: 0.75rem 1rem;
+    min-height: 40px;
+    padding: 0.62rem 0.85rem;
     border: 1px solid rgba(242, 221, 153, 0.42);
     border-radius: 999px;
     background: rgba(242, 221, 153, 0.08);
     color: #f2dd99;
+    font-size: 0.88rem;
     font-weight: 700;
     white-space: nowrap;
     box-shadow: 0 14px 32px rgba(8, 6, 26, 0.2);

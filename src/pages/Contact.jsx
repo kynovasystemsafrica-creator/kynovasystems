@@ -264,6 +264,9 @@ const Contact = () => {
                             <h3>Email us</h3>
                             <p>Best for project questions, partnership requests, and general enquiries that need a detailed response.</p>
                             <a href="mailto:info@kynova.com">info@kynova.com</a>
+                            <a className="contact-email-cta" href="mailto:info@kynova.com">
+                                Contact us by email <FaArrowRight />
+                            </a>
                         </article>
 
                         <article className="contact-channel-card">
@@ -293,18 +296,6 @@ const Contact = () => {
                                 ></iframe>
                             </div>
                         </article>
-                    </div>
-
-                    <div className="contact-bottom-note contact-next-card">
-                        <span className="contact-kicker">What happens next</span>
-                        <h3>We review enquiries with delivery context in mind.</h3>
-                        <p>
-                            The strongest conversations usually start with a real problem statement. If you already know the outcome
-                            you need, we can help shape the execution path from there.
-                        </p>
-                        <a href="mailto:info@kynova.com">
-                            Contact us by email <FaArrowRight />
-                        </a>
                     </div>
                 </div>
             </section>
