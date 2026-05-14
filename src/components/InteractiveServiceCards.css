@@ -246,6 +246,23 @@
 
 /* Extra small screens */
 @media (max-width: 480px) {
+    .services-list {
+        padding: 0;
+    }
+
+    .service-item {
+        padding: 1.2rem;
+        border-radius: 22px;
+    }
+
+    .service-media {
+        margin: -1.2rem -1.2rem 1rem;
+    }
+
+    .service-image {
+        height: 160px;
+    }
+
     .service-icon-wrapper {
         width: 36px;
         height: 36px;
@@ -258,6 +275,13 @@
 
     .service-description {
         font-size: 0.875rem;
+    }
+
+    .service-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 40px;
+        text-align: center;
     }
 }
 

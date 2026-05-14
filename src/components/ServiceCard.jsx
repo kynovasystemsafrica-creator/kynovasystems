@@ -26,7 +26,14 @@ const ServiceCard = ({
                 {icon && (
                     <div className="service-icon">
                         {typeof icon === 'string' ? (
-                            <img src={icon} alt={title} />
+                            <img
+                                src={icon}
+                                alt={title}
+                                width="64"
+                                height="64"
+                                loading="lazy"
+                                decoding="async"
+                            />
                         ) : (
                             icon
                         )}

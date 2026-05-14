@@ -163,6 +163,10 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        margin-top: var(--navbar-height);
+    }
+
     .hero-content {
         padding: var(--spacing-md);
     }
@@ -173,5 +177,11 @@
 
     .hero-content p {
         font-size: 0.9375rem;
+    }
+
+    .hero-cta {
+        width: 100%;
+        max-width: 280px;
+        text-align: center;
     }
 }

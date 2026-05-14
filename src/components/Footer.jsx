@@ -11,7 +11,7 @@ const Footer = () => {
                     <div className="footer-content">
                         <div className="footer-column footer-brand-column">
                             <Link className="footer-brand-logo" to="/" aria-label="KYNOVA home">
-                                <img src="/logo-new.png" alt="KYNOVA" width="146" height="40" loading="lazy" />
+                                <img src="/logo-new.png" alt="KYNOVA" width="146" height="40" loading="lazy" decoding="async" />
                             </Link>
                             <p className="footer-about">
                                 KYNOVA helps organisations modernise delivery across product engineering,

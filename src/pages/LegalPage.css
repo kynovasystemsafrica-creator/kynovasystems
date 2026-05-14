@@ -34,7 +34,7 @@
 }
 
 .legal-hero {
-    padding: 2rem 0 2.5rem;
+    padding: calc(var(--navbar-height) + 2rem) 0 2.5rem;
 }
 
 .legal-shell {
@@ -102,11 +102,27 @@
 
 @media (max-width: 768px) {
     .legal-hero {
-        padding: 1.5rem 0 2rem;
+        padding: calc(var(--navbar-height) + 1.5rem) 0 2rem;
     }
 
     .legal-shell {
         padding: 1.4rem;
         margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-hero {
+        padding-bottom: 1.5rem;
+    }
+
+    .legal-shell {
+        padding: 1.2rem;
+        margin-bottom: 2rem;
+        border-radius: 22px;
+    }
+
+    .legal-title {
+        font-size: clamp(2rem, 12vw, 2.75rem);
     }
 }

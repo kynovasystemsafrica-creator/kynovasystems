@@ -442,6 +442,38 @@
     }
 }
 
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0.65rem 0;
+    }
+
+    .navbar-scrolled {
+        padding: 0.5rem 0;
+    }
+
+    .navbar-logo {
+        max-width: calc(100vw - 5.5rem);
+        padding: 0.25rem 0.55rem 0.25rem 0.35rem;
+    }
+
+    .logo-image,
+    .navbar-scrolled .logo-image {
+        height: 34px;
+    }
+
+    .logo-text-brand {
+        font-size: 1rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .navbar-menu {
+        width: min(86vw, 300px);
+        padding: 4.75rem 1rem 1.5rem;
+    }
+}
+
 /* Landscape Mobile Fix */
 @media (max-width: 900px) and (orientation: landscape) {
     .navbar-menu {

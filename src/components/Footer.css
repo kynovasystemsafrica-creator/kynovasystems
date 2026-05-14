@@ -295,3 +295,31 @@
         flex-wrap: wrap;
     }
 }
+
+@media (max-width: 480px) {
+    .footer-inner {
+        padding: 0 0.875rem;
+    }
+
+    .footer-actions {
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    .footer-email-link {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .footer-note-list a,
+    .footer-contact a,
+    .footer-nav a {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        gap: 0.75rem;
+        font-size: 0.82rem;
+    }
+}

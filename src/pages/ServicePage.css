@@ -174,3 +174,32 @@
         padding: 2rem 1rem;
     }
 }
+
+@media (max-width: 480px) {
+    .service-intro,
+    .service-highlight-card,
+    .service-bottom-cta {
+        border-radius: 22px;
+        padding: 1.2rem;
+    }
+
+    .service-page .hero-medium {
+        min-height: 300px;
+    }
+
+    .service-page .hero-content {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .service-bottom-cta {
+        gap: 1.2rem;
+    }
+
+    .service-inline-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 42px;
+        white-space: normal;
+        text-align: center;
+    }
+}

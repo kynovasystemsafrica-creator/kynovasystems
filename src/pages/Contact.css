@@ -37,7 +37,7 @@
 
 .contact-hero {
     position: relative;
-    padding: 1.5rem 0 4rem;
+    padding: calc(var(--navbar-height) + 1.5rem) 0 4rem;
 }
 
 .contact-hero::before {
@@ -224,7 +224,13 @@
     box-shadow: 0 14px 32px rgba(8, 6, 26, 0.2);
 }
 
-.contact-channel-card a.contact-email-cta svg {
+.contact-cta-icon {
+    flex: 0 0 auto;
+    font-size: 1rem;
+}
+
+.contact-cta-arrow {
+    flex: 0 0 auto;
     transition: transform 0.22s ease;
 }
 
@@ -233,7 +239,7 @@
     border-color: rgba(242, 221, 153, 0.72);
 }
 
-.contact-channel-card a.contact-email-cta:hover svg {
+.contact-channel-card a.contact-email-cta:hover .contact-cta-arrow {
     transform: translateX(6px);
 }
 
@@ -473,7 +479,7 @@
 
 @media (max-width: 768px) {
     .contact-hero {
-        padding: 1rem 0 3rem;
+        padding: calc(var(--navbar-height) + 1rem) 0 3rem;
     }
 
     .contact-hero-grid,
@@ -501,5 +507,47 @@
     .contact-hero-card,
     .contact-channel-card {
         padding: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-hero {
+        padding-bottom: 2.25rem;
+    }
+
+    .contact-hero-copy h1 {
+        max-width: none;
+        font-size: clamp(2rem, 12vw, 2.65rem);
+    }
+
+    .contact-main-section {
+        padding-top: 2rem;
+    }
+
+    .contact-hero-card,
+    .contact-channel-card,
+    .contact-form-panel {
+        border-radius: 22px;
+    }
+
+    .contact-hero-card img {
+        min-height: 280px;
+        border-radius: 18px;
+    }
+
+    .contact-map-shell {
+        border-radius: 18px;
+    }
+
+    .contact-channel-card a,
+    .contact-channel-note,
+    .contact-channel-card a.contact-email-cta {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .contact-submit {
+        width: min(100%, 220px);
     }
 }

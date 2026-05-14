@@ -116,6 +116,11 @@ body,
   min-width: 320px;
 }
 
+.app,
+main {
+  min-width: 0;
+}
+
 img,
 video,
 canvas {
@@ -285,12 +290,14 @@ a:hover {
 
 /* === CONTAINER & LAYOUT === */
 .container {
+  width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
 }
 
 .container-narrow {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--spacing-md);
@@ -338,6 +345,13 @@ a:hover {
 .grid {
   display: grid;
   gap: var(--spacing-lg);
+}
+
+.grid > *,
+.flex > *,
+.flex-between > *,
+.flex-center > * {
+  min-width: 0;
 }
 
 .grid-2 {
@@ -652,6 +666,7 @@ a:hover {
 
 @media (max-width: 480px) {
   :root {
+    --spacing-lg: 1.5rem;
     --spacing-xl: 2rem;
     --spacing-2xl: 2.5rem;
     --spacing-3xl: 3rem;
@@ -666,6 +681,14 @@ a:hover {
   .btn-large {
     width: 100%;
     padding-inline: 1rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.65rem, 9vw, 2.15rem);
+  }
+
+  .section-subtitle {
+    font-size: 0.98rem;
   }
 }
 

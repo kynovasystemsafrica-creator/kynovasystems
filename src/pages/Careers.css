@@ -35,7 +35,7 @@
 
 .careers-hero {
     position: relative;
-    padding: 1.5rem 0 4rem;
+    padding: calc(var(--navbar-height) + 1.5rem) 0 4rem;
 }
 
 .careers-hero::before {
@@ -253,7 +253,7 @@
 
 @media (max-width: 768px) {
     .careers-hero {
-        padding: 1rem 0 3rem;
+        padding: calc(var(--navbar-height) + 1rem) 0 3rem;
     }
 
     .careers-hero-grid,
@@ -276,5 +276,37 @@
     .careers-benefit-card,
     .careers-cta-panel {
         padding: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .careers-hero {
+        padding-bottom: 2.25rem;
+    }
+
+    .careers-hero-copy h1 {
+        max-width: none;
+        font-size: clamp(2rem, 12vw, 2.65rem);
+    }
+
+    .careers-hero-card,
+    .careers-story-card,
+    .careers-mini-panel,
+    .careers-benefit-card,
+    .careers-cta-panel {
+        border-radius: 22px;
+    }
+
+    .careers-hero-card img {
+        min-height: 280px;
+        border-radius: 18px;
+    }
+
+    .careers-cta-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 42px;
+        white-space: normal;
+        text-align: center;
     }
 }

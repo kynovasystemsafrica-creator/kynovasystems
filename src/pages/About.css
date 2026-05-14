@@ -34,7 +34,7 @@
 
 .about-hero {
     position: relative;
-    padding: 1.5rem 0 4rem;
+    padding: calc(var(--navbar-height) + 1.5rem) 0 4rem;
 }
 
 .about-hero::before {
@@ -310,7 +310,7 @@
 
 @media (max-width: 768px) {
     .about-hero {
-        padding: 1rem 0 3rem;
+        padding: calc(var(--navbar-height) + 1rem) 0 3rem;
     }
 
     .about-hero-grid,
@@ -335,5 +335,37 @@
     .about-name-panel,
     .about-name-aside {
         padding: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        padding-bottom: 2.25rem;
+    }
+
+    .about-hero-copy h1 {
+        max-width: none;
+        font-size: clamp(2rem, 12vw, 2.65rem);
+    }
+
+    .about-hero-card,
+    .about-story-card,
+    .about-mini-panel,
+    .about-value-card,
+    .about-name-panel,
+    .about-name-aside {
+        border-radius: 22px;
+    }
+
+    .about-hero-card img,
+    .about-team-image {
+        min-height: 280px;
+        border-radius: 18px;
+    }
+
+    .about-inline-link {
+        width: 100%;
+        justify-content: center;
+        min-height: 42px;
     }
 }
