@@ -12,6 +12,7 @@ const Contact = () => {
         user_name: '',
         user_email: '',
         contact_number: '',
+        project_type: '',
         subject: '',
         message: ''
     });
@@ -58,7 +59,14 @@ const Contact = () => {
                 message: 'Thank you! Your message has been sent successfully. We will get back to you soon.'
             });
 
-            setFormData({ user_name: '', user_email: '', contact_number: '', subject: '', message: '' });
+            setFormData({
+                user_name: '',
+                user_email: '',
+                contact_number: '',
+                project_type: '',
+                subject: '',
+                message: ''
+            });
 
             setTimeout(() => {
                 setFormStatus({ loading: false, success: false, error: false, message: '' });
@@ -168,6 +176,7 @@ const Contact = () => {
                             <p className="contact-form-intro">
                                 Fill out the form below and our team will get back to you shortly.
                             </p>
+                            <p className="contact-required-note">Required fields are marked.</p>
 
                             {formStatus.success && (
                                 <div className="contact-alert contact-alert-success">Success: {formStatus.message}</div>
@@ -179,7 +188,7 @@ const Contact = () => {
                             <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
                                 <div className="form-row">
                                     <div className="form-group">
-                                        <label htmlFor="name">Full Name *</label>
+                                        <label htmlFor="name">Full name</label>
                                         <input
                                             type="text"
                                             id="name"
@@ -191,7 +200,7 @@ const Contact = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="email">Email Address *</label>
+                                        <label htmlFor="email">Email address</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -217,7 +226,28 @@ const Contact = () => {
                                         />
                                     </div>
                                     <div className="form-group">
-                                        <label htmlFor="subject">Subject *</label>
+                                        <label htmlFor="project_type">Project type</label>
+                                        <select
+                                            id="project_type"
+                                            name="project_type"
+                                            value={formData.project_type}
+                                            onChange={handleChange}
+                                        >
+                                            <option value="">Select an option</option>
+                                            <option value="Product engineering">Product engineering</option>
+                                            <option value="Mobile & web development">Mobile &amp; web development</option>
+                                            <option value="Cloud computing">Cloud computing</option>
+                                            <option value="Consulting">Consulting</option>
+                                            <option value="Graphic design">Graphic design</option>
+                                            <option value="Careers">Careers</option>
+                                            <option value="General enquiry">General enquiry</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div className="form-row">
+                                    <div className="form-group">
+                                        <label htmlFor="subject">Subject</label>
                                         <input
                                             type="text"
                                             id="subject"
@@ -231,7 +261,7 @@ const Contact = () => {
                                 </div>
 
                                 <div className="form-group">
-                                    <label htmlFor="message">Message *</label>
+                                    <label htmlFor="message">Message</label>
                                     <textarea
                                         id="message"
                                         name="message"
@@ -248,7 +278,7 @@ const Contact = () => {
                                     className="btn btn-primary btn-large contact-submit"
                                     disabled={formStatus.loading}
                                 >
-                                    {formStatus.loading ? 'Sending...' : 'Send Message'}
+                                    {formStatus.loading ? 'Sending...' : 'Send enquiry'}
                                 </button>
                             </form>
                         </div>
