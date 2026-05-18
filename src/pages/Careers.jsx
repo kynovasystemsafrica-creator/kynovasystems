@@ -68,6 +68,15 @@ const Careers = () => {
         }
     };
 
+    const openResumeModal = (roleInterest = null) => {
+        setResumeStatus('');
+        setResumeForm((current) => ({
+            ...current,
+            role_interest: roleInterest ?? ''
+        }));
+        setIsResumeModalOpen(true);
+    };
+
     const benefits = [
         {
             title: 'Meaningful Delivery Work',
@@ -91,7 +100,7 @@ const Careers = () => {
             title: 'UI/UX Designer',
             description: 'Accra, Ghana • Full-time • Shape user-centered product experiences, design systems, and interface flows that support clear, practical digital delivery.',
             icon: <FaPaintBrush />,
-            link: '/contact',
+            onClick: () => openResumeModal('UI/UX Designer'),
             linkText: 'Apply Now',
             image: imageAssets.team.src
         },
@@ -99,7 +108,7 @@ const Careers = () => {
             title: 'Cloud Solutions Architect',
             description: 'Accra, Ghana / Remote • Full-time • Design resilient cloud environments and modernization paths that support scale, visibility, and stronger engineering workflows.',
             icon: <FaCloud />,
-            link: '/contact',
+            onClick: () => openResumeModal('Cloud Solutions Architect'),
             linkText: 'Apply Now',
             image: imageAssets.presentation.src
         },
@@ -107,7 +116,7 @@ const Careers = () => {
             title: 'DevOps Engineer',
             description: 'Remote • Full-time • Improve reliability through deployment automation, observability, infrastructure workflows, and practical release discipline.',
             icon: <FaServer />,
-            link: '/contact',
+            onClick: () => openResumeModal('DevOps Engineer'),
             linkText: 'Apply Now',
             image: imageAssets.presentation.src
         },
@@ -115,7 +124,7 @@ const Careers = () => {
             title: 'Digital Marketing Specialist',
             description: 'Accra, Ghana • Full-time • Help clarify our market presence through better campaigns, stronger messaging, content planning, and digital growth initiatives.',
             icon: <FaBullhorn />,
-            link: '/contact',
+            onClick: () => openResumeModal('Digital Marketing Specialist'),
             linkText: 'Apply Now',
             image: imageAssets.meeting.src
         }
@@ -241,10 +250,7 @@ const Careers = () => {
                             className="careers-cta-link careers-resume-trigger"
                             aria-expanded={isResumeModalOpen}
                             aria-controls="resume-application-form"
-                            onClick={() => {
-                                setResumeStatus('');
-                                setIsResumeModalOpen((current) => !current);
-                            }}
+                            onClick={() => openResumeModal()}
                         >
                             Send Your Resume <FaArrowRight />
                         </button>
