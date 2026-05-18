@@ -513,7 +513,6 @@ const Home = () => {
                 <div className="container">
                     <div className="home-hero-layout">
                         <div className="home-hero-copy" data-aos="fade-up">
-                            <span className="home-tag">Managed delivery for modern organisations</span>
                             <h1>On-demand digital transformation teams, ready to deliver.</h1>
                             <p className="home-hero-subtitle">
                                 Move faster with a managed team that helps you modernise systems, build better platforms,

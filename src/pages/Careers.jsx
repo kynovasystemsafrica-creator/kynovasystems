@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import SEO from '../components/SEO';
 import InteractiveServiceCards from '../components/InteractiveServiceCards';
-import { FaPaintBrush, FaCloud, FaServer, FaBullhorn, FaGlobeAfrica, FaUsers, FaChartLine, FaArrowRight } from 'react-icons/fa';
+import { FaPaintBrush, FaCloud, FaServer, FaBullhorn, FaGlobeAfrica, FaUsers, FaChartLine, FaArrowRight, FaSearch } from 'react-icons/fa';
 import { imageAssets } from '../lib/siteAssets';
 import './Careers.css';
 
@@ -127,6 +127,14 @@ const Careers = () => {
             onClick: () => openResumeModal('Digital Marketing Specialist'),
             linkText: 'Apply Now',
             image: imageAssets.meeting.src
+        },
+        {
+            title: 'Tech Researcher',
+            description: 'Remote / Hybrid • Full-time • Research emerging technologies, market signals, product opportunities, and technical trends that help shape smarter client and internal decisions.',
+            icon: <FaSearch />,
+            onClick: () => openResumeModal('Tech Researcher'),
+            linkText: 'Apply Now',
+            image: imageAssets.presentation.src
         }
     ];
 

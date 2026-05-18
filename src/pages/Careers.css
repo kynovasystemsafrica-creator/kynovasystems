@@ -227,7 +227,7 @@ main > .page-transition > .careers-kynova > section.careers-roles-section:last-c
 
 .careers-roles-section .services-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     max-width: none;
 }
 

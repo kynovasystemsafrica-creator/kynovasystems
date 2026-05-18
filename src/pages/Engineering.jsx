@@ -99,7 +99,7 @@ const Engineering = () => {
                             <h3>Let&apos;s shape the engineering work that removes friction and builds better systems.</h3>
                             <p>We can help define the modernization path, workflow priorities, and integration approach that fits your organisation.</p>
                         </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                        <Link className="service-inline-link" to="/contact?project_type=Engineering%20%26%20Digitization#send-enquiry">Talk to KYNOVA</Link>
                     </div>
                 </div>
             </section>

@@ -58,7 +58,6 @@ const About = () => {
                 <div className="container">
                     <div className="about-hero-grid">
                         <div className="about-hero-copy">
-                            <span className="about-kicker">About us</span>
                             <h1>Creating clarity, momentum, and stronger digital execution.</h1>
                             <p className="about-hero-text">
                                 KYNOVA helps organisations modernise the way they build, operate, and deliver.
@@ -206,7 +205,7 @@ const About = () => {
                                 A name built to evoke motion, capability, and renewal. It reflects our focus on
                                 helping ambitious organisations modernise with purpose and execute with clarity.
                             </p>
-                            <Link className="about-inline-link" to="/contact">
+                            <Link className="about-inline-link" to="/contact#send-enquiry">
                                 Start a conversation <FaArrowRight />
                             </Link>
                         </div>

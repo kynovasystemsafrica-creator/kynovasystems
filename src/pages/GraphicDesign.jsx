@@ -99,7 +99,7 @@ const GraphicDesign = () => {
                             <h3>Let&apos;s build a stronger design direction for your brand or product.</h3>
                             <p>We can help define the visual system, user experience priorities, and assets needed to support clearer communication.</p>
                         </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                        <Link className="service-inline-link" to="/contact?project_type=Graphic%20Design#send-enquiry">Talk to KYNOVA</Link>
                     </div>
                 </div>
             </section>

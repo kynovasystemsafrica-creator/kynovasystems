@@ -1,4 +1,5 @@
-import { useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt, FaArrowRight, FaWhatsapp } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { imageAssets } from '../lib/siteAssets';
@@ -6,6 +7,8 @@ import './Contact.css';
 
 const Contact = () => {
     const formRef = useRef();
+    const formSectionRef = useRef(null);
+    const location = useLocation();
     const [formData, setFormData] = useState({
         user_name: '',
         user_email: '',
@@ -20,6 +23,31 @@ const Contact = () => {
         error: false,
         message: ''
     });
+
+    useEffect(() => {
+        const searchParams = new URLSearchParams(location.search);
+        const projectType = searchParams.get('project_type');
+
+        if (projectType) {
+            setFormData((current) => ({
+                ...current,
+                project_type: projectType
+            }));
+        }
+
+        if (location.hash === '#send-enquiry') {
+            const timer = window.setTimeout(() => {
+                formSectionRef.current?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }, 80);
+
+            return () => window.clearTimeout(timer);
+        }
+
+        return undefined;
+    }, [location.hash, location.search]);
 
     const handleChange = (e) => {
         setFormData({
@@ -123,7 +151,7 @@ const Contact = () => {
                 </div>
             </section>
 
-            <section className="section contact-main-section">
+            <section className="section contact-main-section" id="send-enquiry" ref={formSectionRef}>
                 <div className="container">
                     <div className="contact-main-grid">
                         <div className="contact-form-panel">
@@ -190,13 +218,11 @@ const Contact = () => {
                                             onChange={handleChange}
                                         >
                                             <option value="">Select an option</option>
-                                            <option value="Product engineering">Product engineering</option>
-                                            <option value="Mobile & web development">Mobile &amp; web development</option>
-                                            <option value="Cloud computing">Cloud computing</option>
+                                            <option value="Mobile & Web Development">Mobile &amp; Web Development</option>
+                                            <option value="Cloud Computing">Cloud Computing</option>
+                                            <option value="Graphic Design">Graphic Design</option>
                                             <option value="Consulting">Consulting</option>
-                                            <option value="Graphic design">Graphic design</option>
-                                            <option value="Careers">Careers</option>
-                                            <option value="General enquiry">General enquiry</option>
+                                            <option value="Engineering & Digitization">Engineering &amp; Digitization</option>
                                         </select>
                                     </div>
                                 </div>

@@ -129,7 +129,7 @@
 .home-hero-copy h1 {
     font-size: clamp(2.8rem, 6vw, 5rem);
     line-height: 0.98;
-    margin: 1rem 0 1.2rem;
+    margin: 0 0 1.2rem;
     max-width: 11ch;
 }
 
@@ -184,7 +184,7 @@
     min-width: 0;
     aspect-ratio: 16 / 9;
     border-radius: clamp(18px, 3vw, 28px);
-    border: 1px solid rgba(249, 245, 231, 0.16);
+    border: 0;
     background:
         linear-gradient(135deg, rgba(36, 29, 99, 0.6), rgba(200, 168, 75, 0.24)),
         url('/home-hero-photo-960.jpg'),
@@ -322,7 +322,8 @@
 }
 
 .home-trust {
-    padding-top: 0;
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
 }
 
 .home-trust-grid,
@@ -1035,6 +1036,11 @@
         min-height: 380px;
     }
 
+    .home-trust {
+        padding-top: 6rem;
+        padding-bottom: 1.5rem;
+    }
+
     .home-leader-grid,
     .home-solution-grid,
     .home-impact-grid,
@@ -1051,6 +1057,11 @@
     .home-hero {
         padding-top: calc(var(--navbar-height) + 2rem);
         padding-bottom: 3rem;
+    }
+
+    .home-trust {
+        padding-top: 5rem;
+        padding-bottom: 1rem;
     }
 
     .home-hero-copy h1 {
@@ -1185,6 +1196,11 @@
 }
 
 @media (max-width: 420px) {
+    .home-trust {
+        padding-top: 5rem;
+        padding-bottom: 0.875rem;
+    }
+
     .home-hero-copy h1 {
         font-size: 2rem;
     }

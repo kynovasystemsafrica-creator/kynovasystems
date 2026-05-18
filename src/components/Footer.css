@@ -9,6 +9,15 @@
     color: rgba(249, 245, 231, 0.78);
 }
 
+main > .page-transition > [class*="-page"] > section:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+main > .page-transition > [class*="-page"] > section:last-child > .container > :last-child {
+    margin-bottom: 0;
+}
+
 .footer-shell {
     position: relative;
     overflow: hidden;

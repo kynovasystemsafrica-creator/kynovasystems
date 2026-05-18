@@ -99,7 +99,7 @@ const Consulting = () => {
                             <h3>Let&apos;s turn uncertainty into a practical delivery direction.</h3>
                             <p>We can help you define the next steps, the right priorities, and the shape of the execution effort ahead.</p>
                         </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                        <Link className="service-inline-link" to="/contact?project_type=Consulting#send-enquiry">Talk to KYNOVA</Link>
                     </div>
                 </div>
             </section>

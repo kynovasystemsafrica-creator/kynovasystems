@@ -99,7 +99,7 @@ const CloudComputing = () => {
                             <h3>Let&apos;s shape a stronger foundation for your systems and teams.</h3>
                             <p>We can help you clarify the right cloud priorities, modernization path, and operating model for your environment.</p>
                         </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                        <Link className="service-inline-link" to="/contact?project_type=Cloud%20Computing#send-enquiry">Talk to KYNOVA</Link>
                     </div>
                 </div>
             </section>

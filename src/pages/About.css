@@ -107,10 +107,10 @@
 }
 
 .about-hero-card {
-    padding: 1rem;
-    background:
-        linear-gradient(135deg, rgba(60, 52, 137, 0.36), rgba(15, 12, 43, 0.82)),
-        rgba(249, 245, 231, 0.05);
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .about-hero-card img {
@@ -150,9 +150,20 @@
     line-height: 1.55;
 }
 
-.about-story-section,
-.about-team-section {
-    padding-top: 0;
+.about-story-section {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+}
+
+.about-values-section,
+.about-team-section,
+.about-name-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+main > .page-transition > .about-kynova > section.about-name-section:last-child {
+    padding-bottom: 1.5rem;
 }
 
 .about-story-card,
@@ -299,6 +310,17 @@
         grid-template-columns: 1fr;
     }
 
+    .about-values-section,
+    .about-team-section,
+    .about-name-section {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    main > .page-transition > .about-kynova > section.about-name-section:last-child {
+        padding-bottom: 1.5rem;
+    }
+
     .about-team-card {
         grid-template-columns: 1fr;
     }
@@ -317,6 +339,22 @@
     .about-story-grid,
     .about-name-grid {
         grid-template-columns: 1fr;
+    }
+
+    .about-story-section {
+        padding-top: 5rem;
+        padding-bottom: 1rem;
+    }
+
+    .about-values-section,
+    .about-team-section,
+    .about-name-section {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    main > .page-transition > .about-kynova > section.about-name-section:last-child {
+        padding-bottom: 1rem;
     }
 
     .about-hero-card img {
@@ -341,6 +379,22 @@
 @media (max-width: 480px) {
     .about-hero {
         padding-bottom: 2.25rem;
+    }
+
+    .about-story-section {
+        padding-top: 5rem;
+        padding-bottom: 0.875rem;
+    }
+
+    .about-values-section,
+    .about-team-section,
+    .about-name-section {
+        padding-top: 0.875rem;
+        padding-bottom: 0.875rem;
+    }
+
+    main > .page-transition > .about-kynova > section.about-name-section:last-child {
+        padding-bottom: 0.875rem;
     }
 
     .about-hero-copy h1 {

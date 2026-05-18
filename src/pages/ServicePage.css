@@ -46,6 +46,10 @@
     max-width: 900px;
 }
 
+main > .page-transition > .service-page > section:last-child {
+    padding-bottom: 1.5rem;
+}
+
 .service-intro {
     max-width: 920px;
     margin-left: auto;
@@ -156,6 +160,10 @@
 }
 
 @media (max-width: 768px) {
+    main > .page-transition > .service-page > section:last-child {
+        padding-bottom: 1rem;
+    }
+
     .service-intro {
         padding: 1.4rem;
     }
@@ -176,6 +184,10 @@
 }
 
 @media (max-width: 480px) {
+    main > .page-transition > .service-page > section:last-child {
+        padding-bottom: 0.875rem;
+    }
+
     .service-intro,
     .service-highlight-card,
     .service-bottom-cta {

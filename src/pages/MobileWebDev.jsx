@@ -98,7 +98,7 @@ const MobileWebDev = () => {
                             <h3>Let&apos;s discuss the product or platform you want to build.</h3>
                             <p>We can help shape the scope, technical approach, and delivery path that fits your timeline and business goals.</p>
                         </div>
-                        <Link className="service-inline-link" to="/contact">Talk to KYNOVA</Link>
+                        <Link className="service-inline-link" to="/contact?project_type=Mobile%20%26%20Web%20Development#send-enquiry">Talk to KYNOVA</Link>
                     </div>
                 </div>
             </section>
