@@ -11,16 +11,28 @@ const ScrollReveal = () => {
             return undefined;
         }
 
+        document.documentElement.classList.add('reveal-enabled');
+
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const isInInitialViewport = (element) => {
+            const rect = element.getBoundingClientRect();
+
+            return rect.top < window.innerHeight * 0.9 && rect.bottom > 0;
+        };
 
         elements.forEach((element) => {
             const delay = element.getAttribute('data-aos-delay');
-            element.classList.remove('aos-animate');
 
             if (delay) {
                 element.style.setProperty('--reveal-delay', `${delay}ms`);
             } else {
                 element.style.removeProperty('--reveal-delay');
+            }
+
+            if (isInInitialViewport(element)) {
+                element.classList.add('aos-animate');
+            } else {
+                element.classList.remove('aos-animate');
             }
         });
 

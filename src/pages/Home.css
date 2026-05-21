@@ -131,6 +131,7 @@
     line-height: 0.98;
     margin: 0 0 1.2rem;
     max-width: 11ch;
+    overflow-wrap: anywhere;
 }
 
 .home-hero-subtitle {
@@ -1141,6 +1142,18 @@
 }
 
 @media (max-width: 560px) {
+    .home-hero-copy,
+    .home-hero-subtitle,
+    .home-hero-trust-list {
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .home-hero-copy h1 {
+        font-size: clamp(2rem, 9vw, 2.65rem);
+        line-height: 1.06;
+    }
+
     .home-tag,
     .home-mini-tag,
     .home-company-strip span {
